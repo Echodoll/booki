@@ -15,7 +15,6 @@ margin: 0;
 nav  {
     margin-bottom: 30px;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
@@ -45,6 +44,7 @@ nav div {
 .nav-menu a {
     border-top:2px solid white;
     padding-top:16px;
+    border-bottom:2px solid white;
 }
 /***** Header Vacance de rêve******/
 
@@ -111,6 +111,9 @@ nav div {
     text-align: center;
     border: none;
 }
+.button-search-2{
+    display: none;
+}
 
 /******  Filtres *****/
 
@@ -137,6 +140,21 @@ nav div {
     font-size: 17px;
     font-weight: bold;
     padding: 0;
+}
+.button-search-2 {
+    display:none;
+}
+.button-search-2 button {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    border-color: none;
+    border-style: none;
+    background-color: #0065FC;
+}
+.button-search-2 i {
+    color: white;
+    border-style: none;
 }
 .nugget {
     width: 161px;
@@ -184,10 +202,18 @@ nav div {
 
 /******* Fin Filtre *****/
 /*******Hébergements à Marseille******/
+.card-marseille a {
+    text-decoration: none;
+    color: black;
+}
+.card-marseille a:visited {
+    text-decoration: none;
+    color: black;
+}
 .card-marseille img{
     object-fit: cover ;
     width: 100%;
-    height: 50%;
+    height: 60%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 
@@ -196,19 +222,18 @@ nav div {
     background-color: white;
     border-radius: 20px;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
-    aspect-ratio: 4/5;
-    flex: 25% 1 1;
-    max-width: 250px;
-    max-height: 207px;
     padding: 5px;
-
+    height: 205px;
+    width: 28%;
 }
 .hebergements a {
     text-decoration: none;
+
 }
 .title-marseille {
     margin-top:4px;
-    margin-left:15px
+    margin-left:15px;
+    height: 20%;
 }
 .title-marseille h3 {
     padding-bottom: 8px;
@@ -218,6 +243,7 @@ nav div {
 }
 .hebergements h2 {
     margin-bottom: 30px;
+    margin-left:30px;
 }
 .main-container {
     width: 100%; 
@@ -229,10 +255,15 @@ nav div {
     display: flex;
     flex-wrap: wrap;
     gap:30px;
+    justify-content: center;
 }
 .section-card-title {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    margin: 30px;
+    margin-bottom: 0px;
+    margin-left: 0px;
 }
 
 .end-marseille{
@@ -240,8 +271,11 @@ nav div {
     font-size: 18px;
     font-weight: bold;
     margin-top: 30px;
+    margin-left:30px;
 }
-
+.hebergements {
+    background-color: #F2F2F2;
+}
 
 /**** Fin hébergement à Marseille ****/
 
@@ -341,13 +375,17 @@ body {
     margin-bottom: 65px;
 }
 
-.hebergements-and-populaires section {
+.hebergements-and-populaires .hebergements {
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+.hebergements-and-populaires .populaires {
     background-color: var(--main-bg-color);
     border-radius: 20px;
     padding: 30px;
     box-sizing: border-box;
 }
-
 /****** Hebergements ***********/
 .hebergements {
     width: 65%;
@@ -406,6 +444,22 @@ body {
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
+    
+    /*** CSS 1024 filtres ***/
+
+    .filter-global {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .filter {
+        flex-wrap:wrap;
+    }
+    .filter p {
+        width: 100%;
+    }
+
+    /*** CSS 1024 hebergement-populaire ***/
+
     .hebergements-and-populaires {
         flex-direction: column;
     }
@@ -436,25 +490,193 @@ body {
     .populaires-cards .card-subtitle {
         font-size: 13px;
     }
-}
 
+    /*** CSS 1024 hébergements-Marseille ***/
+
+    .hebergements-marseille {
+        display: flex;
+        justify-content: center;
+    }
+    .end-marseille {
+        margin:30px;
+    }
+    
+    /*** CSS 1024 activités à Marseille ***/
+
+    .card-activities img{
+        height: 200Px;
+    }
+}
 /* Small devices (phones, less than 768px) */
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
     /* ... */
 
+.main-container {
+        padding: 0px;
+    }
+
+    /*** CSS 768 nav-menu ***/
+
 nav{
-    display: flex;
-    flex-direction: column;
+        flex-direction: column;
+    }
+ .nav-menu a {
+      width: 50%;
+      text-align: center;
+      border-bottom: 2px solid #F2F2F2;
+      padding-bottom: 15px;
 }
 .nav-menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  
+      gap:0px;
+      width: 100%;
 }
-nav img {
-    display: flex;
-    align-items: center;
+.nav-menu a:hover{
+      border-bottom:2px solid #0065FC;
+      border-top: 2px solid white;
+      padding-bottom: 15px;
+      text-decoration: #0065FC;
+}
+ nav img {
+      width: 4em;
+      padding: 0px;
+      margin:30px;
+}
+/*** CSS 768 Section Vacance de rêve, formulaire, filtres ***/
+
+.vacances-and-dream {
+      margin: 20px;
+}
+.search {
+      align-items: center;
+}
+.logo-search {
+      height: 50px;
+}
+.site-search {
+      width: 270px;
+      position: relative;
+}
+.button-search {
+      display: none;
+}
+.button-search-2 {
+      display: block;
+      position:relative;
+      right: 10px;
+}
+.filter-global {
+      margin-bottom:15px;
+}
+.filter {
+      padding:0px;
+}
+.filter p {
+      margin:20px;
+      width:100%;
+}
+.button-filter {
+      display: flex   ;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap:10px;
+}
+.button-filter button {
+      width:40%;
+}
+.information {
+      margin:20px;
 }
 
+/*** CSS 768 Hébergements populaires ***/
+
+.hebergements-and-populaires section {
+      margin-top: 0px;
+}
+.hebergements-and-populaires .populaires {
+      padding: 0;
+      border-radius: 0%;
+      padding-bottom: 30px;
+}
+.hebergements-and-populaires {
+      margin:0px;
+}.populaires-title {
+      margin:20px;
+}
+.section-title{
+      margin-left:0px;
+}
+.populaires-cards {
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+}
+
+/*** CSS 768 hébergements à Marseille ***/
+
+#hebergements {
+      order: 2;
+}
+.hebergements-and-populaires .hebergements {
+      background-color: white;
+      padding: 0px;
+      margin-bottom: 65px;
+      width: 100%;
+}
+.section-card-title {
+      margin:20px;
+      flex-direction: column;
+      width: 90%;
+}
+.section-card-title h2 {
+      margin:0px;
+      margin-bottom:20px;
+}
+.populaires-cards .card {
+      margin:0px;
+      width: 85%;
+      margin-left: 20px;
+      margin-right: 20px;
+}
+.hebergements-marseille {
+      flex-direction:column;
+      row-gap: 15px;
+}
+.section-card-title {
+      margin:20px;
+      flex-direction: column;
+      width: 85%;
+}
+.card-marseille {
+      width:100%;
+}
+.end-marseille {
+      margin-left:20px;
+}
+
+/*** CSS 768 Activités à Marseille ***/
+
+.activities-marseille {
+      margin:30px;
+}
+.section-title h2{
+      margin: 0;
+}
+.card-activities-marseille{
+      flex-direction: column;
+      gap:15px;
+}
+.card-activities img {
+      height: 141px;
+}
+
+/*** CSS 768 Footer ***/
+
+.footer {
+      flex-direction: column;
+      gap:0px;
+}
+.footer-list {
+      margin-left:30px;
+      width: 60%;
+}
 }
