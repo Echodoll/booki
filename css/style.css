@@ -666,6 +666,9 @@ nav{
 }
 
 /*** CSS 768 Footer ***/
+.footer-list {
+    width: 100%;
+}
 
 .footer {
       flex-direction: column;
