@@ -85,7 +85,9 @@ nav div {
     color: black;
     border:1px solid #F2F2F2;
 }
-
+.site-search ::placeholder {
+    color: black ;
+}
 .site-search input {
     width: 195px;
     font-size: 18px;
@@ -147,7 +149,6 @@ nav div {
     width: 50px;
     height: 50px;
     border-radius: 15px;
-    border-color: none;
     border-style: none;
     background-color: #0065FC;
 }
@@ -489,7 +490,7 @@ body {
         font-size: 13px;
     }
     .section-card-title {
-        margin: var (--padding) O;
+        padding: var(--padding) 0;
     }
     /*** CSS 1024 hébergements-Marseille ***/
 
